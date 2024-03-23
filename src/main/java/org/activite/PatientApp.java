@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
 import java.util.List;
@@ -20,7 +21,7 @@ public class PatientApp implements CommandLineRunner {
         SpringApplication.run(PatientApp.class, Args);
     }
 
-    @Override
+
     public void run(String... args) throws Exception {
        PatientRepository.save(new Patient(null,"Patien A", new Date(), true,3));
         PatientRepository.save(new Patient(null,"Patien b", new Date(), true,3));
@@ -39,4 +40,6 @@ public class PatientApp implements CommandLineRunner {
         PatientRepository.delete(patient);
 
     }
+
+
 }
